@@ -1,5 +1,5 @@
 .BackgroundImage {
     height: 100%;
     width: 100%;
-    background-image: "../../assets/img/BuckinghamBackground.jpg";
+    background-image: url("../../assets/img/BuckinghamBackground.jpg")!important;
 }
