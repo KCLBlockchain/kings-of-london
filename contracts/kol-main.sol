@@ -3,6 +3,7 @@ pragma solidity ^0.4.24;
 /** 
   * @title Kings Of London DApp
   * @author Frederico Lacs
+  * @version 0.1.0
  **/
  
 import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
