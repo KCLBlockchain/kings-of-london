@@ -55,7 +55,9 @@ class Sidebar extends Component {
           <ul className="nav">
             {this.state.width <= 991 ? <HeaderLinks /> : null}
             {dashboardRoutes.map((prop, key) => {
+              console.log(prop.name, "HERE IS THE KEYYY")
               if (!prop.redirect)
+                if (['Notifications', 'User Profile', 'Table List', 'Dashboard'].includes(prop.name))
                 return (
                   <li
                     className={
