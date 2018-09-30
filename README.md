@@ -1,6 +1,15 @@
 # [Light Bootstrap Dashboard React](http://lbd-react.creative-tim.com/)
 [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
+## Terminal Commands
+
+1. Run in terminal: ```npm install```
+2. Then: ```truffle compile```
+3. Then: ```truffle migrate```
+5. Then: ```npm start```
+6. Navigate to `http://localhost:3000/`
+7. (optional) Run in terminal `npm i -g cross-env`
+
 ![alt text](http://s3.amazonaws.com/creativetim_bucket/products/64/opt_lbdr_thumbnail.jpg)
 
 **[Light Bootstrap Dashboard React](http://lbd-react.creative-tim.com/)** is an admin dashboard template designed to be beautiful and simple. It is built on top of [React Bootstrap](https://react-bootstrap.github.io/), using [Light Bootstrap Dashboard](https://www.creative-tim.com/product/light-bootstrap) and it is fully responsive. It comes with a big collections of elements that will offer you multiple possibilities to create the app that best fits your needs. It can be used to create admin panels, project management systems, web applications backend, CMS or CRM.
