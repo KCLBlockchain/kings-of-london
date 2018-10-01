@@ -1,8 +1,8 @@
 var Escrow = artifacts.require("./Escrow");
 var KOLogic = artifacts.require("./KOLogic");
 var KolStorageV1 = artifacts.require("./KolStorageV1");
-var OwnableLogic = artifacts.require("./Ownable");
-var OwnableStorage = artifacts.require("./Ownable");
+var OwnableLogic = artifacts.require("./OwnableLogic");
+var OwnableStorage = artifacts.require("./OwnableStorage");
 var PullPayment = artifacts.require("./PullPayment");
 var SafeMath = artifacts.require("./SafeMath");
 

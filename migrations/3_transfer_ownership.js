@@ -10,12 +10,15 @@ module.exports = async function(deployer) {
     console.log("previous storage owner");
     console.log(storage.owner());
     
-    /*
+    // /*
     // not currently working, transfer has to be done manually
     
     storage.transferOwnership(logic.address).then(function() {
         console.log("new storage owner");
         console.log(storage.owner());
     });
-    */
+    /* */
+
+    console.log("new storage owner");
+        console.log(storage.owner());
 };
