@@ -18,7 +18,4 @@ module.exports = async function(deployer) {
         console.log(storage.owner());
     });
     /* */
-
-    console.log("new storage owner");
-        console.log(storage.owner());
 };
