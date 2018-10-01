@@ -36,16 +36,16 @@ contract KOLogic is Ownable, PullPayment {
     event UpdatedBlockCreationValue (uint256 value);
     event UpdatedStorageAddress (address newStorageAddress);
     event BlockBought (
-        uint64 x, 
-        uint64 y, 
+        uint8 x, 
+        uint8 y, 
         string indexed universityName, 
         address indexed oldOwner, 
         address indexed newOwner, 
         uint256 price
     );
     event BlockInformationUpdated (
-        uint64 x, 
-        uint64 y, 
+        uint8 x, 
+        uint8 y, 
         string indexed universityName, 
         string _imageURL, 
         string _description, 
@@ -74,7 +74,7 @@ contract KOLogic is Ownable, PullPayment {
      *   Could have made this a pure function and added the uni verification somewhere else.
      *   Maybe verify for valid universities in the frontend input?
      */
-    function getBlockID(uint64 _x, uint64 _y, string _uniName) internal view returns (bytes32 id) {
+    function getBlockID(uint8 _x, uint8 _y, string _uniName) internal view returns (bytes32 id) {
         require(isValidUniversity[_uniName], "Invalid University");
 
         id = keccak256(abi.encodePacked(_x, ":", _y, "@", _uniName));
@@ -99,8 +99,8 @@ contract KOLogic is Ownable, PullPayment {
     }
 
     function buyBlock (
-        uint64 _x, 
-        uint64 _y, 
+        uint8 _x, 
+        uint8 _y, 
         string _uniName,
         string _imageURL,
         string _description,
@@ -147,8 +147,8 @@ contract KOLogic is Ownable, PullPayment {
     }
 
     function updateBlock (
-        uint64 _x, 
-        uint64 _y, 
+        uint8 _x, 
+        uint8 _y, 
         string _uniName,
         string _imageURL, 
         string _description, 
