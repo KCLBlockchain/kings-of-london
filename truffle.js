@@ -19,6 +19,13 @@ module.exports = {
       port: 7545,
       network_id: "*" // matching any id
       // truffle migrate --reset --network ganache
+    },
+    rinkeby: {
+      network_id: 4,
+      host: '127.0.0.1',
+      port: 8545,
+      gas: 4000000
     }
+ 
   }
 };

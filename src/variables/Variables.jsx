@@ -1,8 +1,14 @@
+var contractAddress = "0x09eddd6b3fc0beeabe3189cec8c54fb18e9515b4";
+var contractAbi = require("../json/KOLogic.json");
+
+
+
 //
 // //
 // // // For notifications
 // //
 //
+
 var defaultWidth =
   window.screen.width > 768 ? window.screen.width * 1 / 3 : window.screen.width;
 
@@ -247,6 +253,7 @@ var style = {
 // // // For tables
 // //
 //
+
 const thArray = ["ID", "Name", "Salary", "Country", "City"];
 const tdArray = [
   ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
@@ -257,11 +264,17 @@ const tdArray = [
   ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
 ];
 
+
+
+
+
 //
 // //
 // // // For icons
 // //
 //
+
+
 const iconsArray = [
   "pe-7s-album",
   "pe-7s-arc",
@@ -467,6 +480,8 @@ const iconsArray = [
   "pe-7s-airplay"
 ];
 
+
+
 //
 // //
 // // // // For dashboard's charts
@@ -580,6 +595,8 @@ var legendBar = {
 };
 
 module.exports = {
+  contractAddress,
+  contractAbi,
   style, // For notifications (App container and Notifications view)
   thArray,
   tdArray, // For tables (TableList view)

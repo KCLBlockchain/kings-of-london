@@ -9,16 +9,13 @@ class Footer extends Component {
           <nav className="pull-left">
             <ul>
               <li>
-                <a href="#pablo">Home</a>
+                <a href="#dashboard">Home</a>
               </li>
               <li>
-                <a href="#pablo">Company</a>
+                <a href="https://www.kclblockchain.com">KCL Blockchain</a>
               </li>
               <li>
-                <a href="#pablo">Portfolio</a>
-              </li>
-              <li>
-                <a href="#pablo">Blog</a>
+                <a href="https://github.com/KCLBlockchain/kings-of-london">Github</a>
               </li>
             </ul>
           </nav>
