@@ -11,23 +11,30 @@ const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
 
-
 var KolContract = new web3.eth.Contract(contractAbi.abi, contractAddress);
 
-const thArray = ["X", "Y", "University", "Price Paid", "Current Owner", "Old Owner"];
+const thArray = [ "University", "Price Paid", "Current Owner"];
 var tdArray = [];
 
 KolContract.getPastEvents("BlockBought", { fromBlock: 0, toBlock: 'latest'}, 
 function(error, events){ 
   events.forEach(function(log){
-    if(log.returnValues.universityName == "0x1fe1cf5c703b4fa3de9ed350c265f6724bba1239ca09f9a4a2c335c26578adf9") {
-      var uni = "KCL";
+    var uni = log.returnValues.universityName;
+
+    // bytes32 values
+    if(uni === "0x1fe1cf5c703b4fa3de9ed350c265f6724bba1239ca09f9a4a2c335c26578adf9") {
+      uni = "KCL";
+    } else if(uni === "0x32ba5e2b8fcdd5fe478e11901eedc8e837e4932724698d55c94d97f8bb4b5693") {
+      uni = "LSE";
+    } else if(uni === "0xbe196f7453eabe8cf976201441818e7888cac83cd4c7cd0af844defd9f71f962") {
+      uni = "IMP";
+    } else if(uni === "0x0ddb0855c49d8a4028de6d72a5ea5f191e92a82f5b5a7cd0510b8523d857db49") {
+      uni = "UCL";
     }
-    var oldOwner = log.returnValues.oldOwner;
-    if(log.returnValues.oldOwner == contractAddress){
-      oldOwner = "new block";
-    }
-    var entry = [log.returnValues.x, log.returnValues.y, uni, log.returnValues.price, log.returnValues.newOwner, oldOwner];
+    
+    
+    
+    var entry = [uni, log.returnValues.price, log.returnValues.newOwner];
     tdArray.push(entry);
   });
 });

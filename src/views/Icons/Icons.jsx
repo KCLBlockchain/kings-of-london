@@ -10,7 +10,6 @@ const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
 
-
 var KolContract = new web3.eth.Contract(contractAbi.abi, contractAddress);
 
 // default uni to KCL
@@ -89,7 +88,7 @@ class Icons extends Component {
                           xs={6}
                         >
                     <div onClick={kclClick}>
-                    <img src="https://alumni.kcl.ac.uk/image/2015-site/KCL_boxed_redcmyk_A4-002-3.gif" alt="KCL" height="100" width="140"></img>
+                    <img src="https://alumni.kcl.ac.uk/image/2015-site/KCL_boxed_redcmyk_A4-002-3.gif" alt="KCL" height="130" width="180"></img>
                     </div>
                     </Col>
 
@@ -100,7 +99,7 @@ class Icons extends Component {
                           xs={6}
                         >
                     <div onClick={lseClick}>
-                    <img src="http://i1.sndcdn.com/avatars-000015621001-z8o3ny-original.png" alt="LSE" height="100" width="140"></img>
+                    <img src="http://i1.sndcdn.com/avatars-000015621001-z8o3ny-original.png" alt="LSE" height="130" width="180"></img>
                     </div>
                     </Col>
 
@@ -111,7 +110,7 @@ class Icons extends Component {
                           xs={6}
                         >
                     <div onClick={impClick}>
-                    <img src="http://ammf.org.uk/wp-content/uploads/2017/03/Imperial-College-logo.png" alt="IMP" height="100" width="140"></img>
+                    <img src="http://ammf.org.uk/wp-content/uploads/2017/03/Imperial-College-logo.png" alt="IMP" height="130" width="180"></img>
                     </div>
                     </Col>
 
@@ -122,7 +121,7 @@ class Icons extends Component {
                           xs={6}
                         >
                     <div onClick={uclClick}>
-                    <img src="https://www.sjcr.net/content/uploads/2018/02/ucl-logo.jpg" alt="UCL" height="80" width="120"></img>
+                    <img src="https://www.sjcr.net/content/uploads/2018/02/ucl-logo.jpg" alt="UCL" height="130" width="180"></img>
                     </div>
                     </Col>
 

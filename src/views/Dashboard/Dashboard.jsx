@@ -36,7 +36,9 @@ var IMAGES = [];
 KolContract.getPastEvents("BlockInformationUpdated", { fromBlock: 0, toBlock: 'latest'}, 
 function(error, events){ 
   events.forEach(function(log){
-    console.log(log);
+    if(log.returnValues._imageURL === ""){
+      return;
+    }
     if(log.returnValues._forSale){
       var entry = {
         src: log.returnValues._imageURL,
