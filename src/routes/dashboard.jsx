@@ -12,34 +12,47 @@ const dashboardRoutes = [
     path: "/dashboard",
     name: "Dashboard",
     icon: "pe-7s-graph",
-    component: Dashboard
+    component: Icons
   },
+  /*
   {
     path: "/user",
     name: "User Profile",
     icon: "pe-7s-user",
     component: UserProfile
   },
+  */
+  
+
+ {
+  path: "/leaderboard",
+  name: "Leaderboard",
+  icon: "pe-7s-diamond"
+},
+
+  { path: "/blocks", name: "Explore Blocks", icon: "pe-7s-science", component: Dashboard },
+  
+  
+
   {
-    path: "/table",
-    name: "Table List",
+    path: "/history",
+    name: "History",
     icon: "pe-7s-note2",
     component: TableList
   },
-  {
-    path: "/typography",
-    name: "Typography",
-    icon: "pe-7s-news-paper",
-    component: Typography
-  },
-  { path: "/icons", name: "Icons", icon: "pe-7s-science", component: Icons },
-  { path: "/maps", name: "Maps", icon: "pe-7s-map-marker", component: Maps },
+
+  
+  
+  //{ path: "/maps", name: "Map [WIP]", icon: "pe-7s-map-marker", component: Maps },
+  /*
   {
     path: "/notifications",
     name: "Notifications",
     icon: "pe-7s-bell",
     component: Notifications
   },
+  */
+  /*
   {
     upgrade: true,
     path: "/upgrade",
@@ -47,6 +60,14 @@ const dashboardRoutes = [
     icon: "pe-7s-rocket",
     component: Upgrade
   },
+  */
+ {
+  path: "/aboutus",
+  name: "About us",
+  icon: "pe-7s-news-paper",
+  component: Typography
+},
+
   { redirect: true, path: "/", to: "/dashboard", name: "Dashboard" }
 ];
 

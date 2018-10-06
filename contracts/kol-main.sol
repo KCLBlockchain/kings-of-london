@@ -36,16 +36,16 @@ contract KOLogic is Ownable, PullPayment {
     event UpdatedBlockCreationValue (uint256 value);
     event UpdatedStorageAddress (address newStorageAddress);
     event BlockBought (
-        uint64 x, 
-        uint64 y, 
+        uint8 x, 
+        uint8 y, 
         string indexed universityName, 
         address indexed oldOwner, 
         address indexed newOwner, 
         uint256 price
     );
     event BlockInformationUpdated (
-        uint64 x, 
-        uint64 y, 
+        uint8 x, 
+        uint8 y, 
         string indexed universityName, 
         string _imageURL, 
         string _description, 
@@ -74,7 +74,7 @@ contract KOLogic is Ownable, PullPayment {
      *   Could have made this a pure function and added the uni verification somewhere else.
      *   Maybe verify for valid universities in the frontend input?
      */
-    function getBlockID(uint64 _x, uint64 _y, string _uniName) internal view returns (bytes32 id) {
+    function getBlockID(uint8 _x, uint8 _y, string _uniName) internal view returns (bytes32 id) {
         require(isValidUniversity[_uniName], "Invalid University");
 
         id = keccak256(abi.encodePacked(_x, ":", _y, "@", _uniName));
@@ -99,8 +99,8 @@ contract KOLogic is Ownable, PullPayment {
     }
 
     function buyBlock (
-        uint64 _x, 
-        uint64 _y, 
+        uint8 _x, 
+        uint8 _y, 
         string _uniName,
         string _imageURL,
         string _description,
@@ -147,8 +147,8 @@ contract KOLogic is Ownable, PullPayment {
     }
 
     function updateBlock (
-        uint64 _x, 
-        uint64 _y, 
+        uint8 _x, 
+        uint8 _y, 
         string _uniName,
         string _imageURL, 
         string _description, 
@@ -170,7 +170,7 @@ contract KOLogic is Ownable, PullPayment {
     }
 }
 
-contract StorageInterface {
+interface StorageInterface {
     function newBlock (
         bytes32 _blockID, 
         string _imageURL, 
@@ -178,7 +178,7 @@ contract StorageInterface {
         address _blockOwner, 
         bool _forSale,
         uint256 _price
-    ) public returns (bool success);
+    ) external returns (bool success);
 
     function updateBlock (
         bytes32 _blockID, 
@@ -187,11 +187,11 @@ contract StorageInterface {
         address _blockOwner, 
         bool _forSale, 
         uint256 _price
-    ) public returns (bool success);
+    ) external returns (bool success);
 
-    function deleteBlock (bytes32 _blockID) public returns (bool success);
+    function deleteBlock (bytes32 _blockID) external returns (bool success);
 
-    function getBlock(bytes32 _blockID) public view returns (
+    function getBlock(bytes32 _blockID) external view returns (
         string imageURL,
         string description,
         address blockOwner,
@@ -200,8 +200,8 @@ contract StorageInterface {
         bool isEntity
     );
 
-    function getBlockOwner(bytes32 _blockID) public view returns (address blockOwner);
-    function transferOwnership(address _newOwner) public;
+    function getBlockOwner(bytes32 _blockID) external view returns (address blockOwner);
+    function transferOwnership(address _newOwner) external;
 }
 
 contract KolStorageV1 is Ownable {
@@ -227,7 +227,7 @@ contract KolStorageV1 is Ownable {
         bool _forSale,
         uint256 _price
     ) 
-        public 
+        external 
         onlyOwner 
         returns (bool success) 
     {
@@ -244,7 +244,7 @@ contract KolStorageV1 is Ownable {
         bool _forSale, 
         uint256 _price
     ) 
-        public 
+        external 
         onlyOwner 
         returns (bool success) 
     {
@@ -253,13 +253,13 @@ contract KolStorageV1 is Ownable {
         success = true;
     }
 
-    function deleteBlock(bytes32 _blockID) public onlyOwner returns (bool success) {
+    function deleteBlock(bytes32 _blockID) external onlyOwner returns (bool success) {
         blocks[_blockID].isEntity = false;
         success = true;
     }
 
     function getBlock(bytes32 _blockID) 
-        public
+        external
         view
         onlyOwner
         returns (
@@ -281,7 +281,7 @@ contract KolStorageV1 is Ownable {
         isEntity = b.isEntity;
     }
 
-    function getBlockOwner(bytes32 _blockID) public view returns (address blockOwner) {
+    function getBlockOwner(bytes32 _blockID) external view returns (address blockOwner) {
         blockOwner = blocks[_blockID].blockOwner;
     }
 }
