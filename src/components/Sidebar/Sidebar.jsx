@@ -48,14 +48,16 @@ class Sidebar extends Component {
           <a
             className="simple-text logo-normal"
           >
-            King's of London
+            KOL
           </a>
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
             {this.state.width <= 991 ? <HeaderLinks /> : null}
             {dashboardRoutes.map((prop, key) => {
+              console.log(prop.name, "HERE IS THE KEYYY")
               if (!prop.redirect)
+                if (['Notifications', 'Table List', 'Dashboard'].includes(prop.name))
                 return (
                   <li
                     className={

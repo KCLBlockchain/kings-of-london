@@ -126,7 +126,6 @@ class Dashboard extends Component {
               );
             })}
           </Switch>
-          <Footer />
         </div>
       </div>
     );
