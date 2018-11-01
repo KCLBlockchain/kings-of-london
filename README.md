@@ -3,8 +3,9 @@
 ## Terminal Commands
 
 1. Run in terminal: ```npm install```
-2. Then: ```truffle compile``` (add a copy of KOLogic.json to src/json)
+2. Then: ```truffle compile``` (add a copy of KOLogic.json to /src/json)
 3. Then: ```truffle migrate``` (if running tests on ganache use the '--reset --network ganache' flags)
+4. Update the contract address at /src/variables/Variables.jsx
 5. Then: ```npm start```
 6. Navigate to `http://localhost:3000/`
 
